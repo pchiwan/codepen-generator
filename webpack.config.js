@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  devtool: 'cheap-module-source-map',  
+  devtool: 'cheap-module-source-map',
   entry: path.join(__dirname, 'src/index.js'),
   output: {
     filename: 'index.js',
@@ -12,22 +12,6 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: true,
-      compress: {
-        warnings: false,
-        sequences: true,
-        dead_code: true,
-        conditionals: true,
-        booleans: true,
-        unused: true,
-        if_return: true,
-        join_vars: true,
-        drop_console: true
-      }
-    }),
-  ],
   module: {
     loaders: [
       {
@@ -46,8 +30,11 @@ module.exports = {
       }
     ]
   },
-
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin('app.css')
-  ]
+  ],
 }

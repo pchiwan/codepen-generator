@@ -89,7 +89,7 @@ class App extends Component {
             onChange={this.setPostTypeform.bind(this)} />
         </div>
         <div className="action">
-          <form action="http://codepen.io/pen/define" method="POST" target="_blank">
+          <form action="https://codepen.io/pen/define" method="POST" target="_blank">
             <input type="hidden" name="data" value={this.state.data} />
             <button type="submit">Generate</button>
           </form>
