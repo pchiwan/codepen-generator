@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Nova+Mono');
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
 
-$buttonColor: #002FA7;
+/* include CodeMirror's CSS */
+@import '../../node_modules/codemirror/lib/codemirror.css';
+@import '../../node_modules/codemirror/theme/monokai.css';
+
+$buttonColor: #002FA7; // KLEIN blue n_n
 
 html {
   height: 100%;
@@ -19,12 +22,12 @@ body {
 
 h1, h2 {
   font-family: 'Nova Mono';
+  text-shadow: -6px 6px black;
 }
 
-input, textarea {
-  font-family: 'Cutive Mono';
-  font-size: 16px;
-  width: 100%;
+input {
+  font-family: 'Dosis';
+  font-size: 18px;
 }
 
 #root { 
@@ -33,26 +36,40 @@ input, textarea {
 }
 
 header{
-  font-size: 28px;
+  font-size: 24px;
   color: white;
   text-align: center;
 }
 
 .box {
   box-shadow: 0 0 1px black;
-  background-color: snow;
+  background-color: ghostwhite;
   margin: 20px 0;
   padding: 10px;
   display: flex;
-}
+  flex-direction: column;
 
-#embed-placeholder {
   label{
     display: block;
     margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 22px;
   }
   input{
     padding: 5px;
+  }
+}
+
+.configurator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+
+  .control {
+    #title {
+      width: 400px;
+    }
   }
 }
 
@@ -61,20 +78,32 @@ header{
   margin-bottom: 40px;
   
   button {
-    border: 1px solid white;
+    font-family: 'Dosis';
+    font-size: 24px;
+    font-weight: bold;
+    border: 4px solid ghostwhite;
     border-radius: 5px;
     padding: 10px 15px;
-    font-size: 18px;
-    font-weight: bold;
     background-color: $buttonColor;
     color: white;
     cursor: pointer;
 
+    &:focus {
+      outline: 0;
+    }
     &:hover {
       background-color: lighten($buttonColor, 10%);
     }
     &:active {
       background-color: darken($buttonColor, 10%);
     }
+  }
+}
+
+.ReactCodeMirror {
+  width: 100%;
+
+  .CodeMirror {
+    font-size: 15px;
   }
 }

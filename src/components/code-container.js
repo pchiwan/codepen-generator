@@ -1,26 +1,25 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import CodeMirror from 'react-codemirror';
 
-class CodeContainer extends Component {
+import 'codemirror/mode/xml/xml';
 
-  handleBlur () {
-    this.props.onChange(this.input.value)
-  }
+const CodeContainer = ({onChange}) => {
+  const options = {
+    lineNumbers: true,
+    readOnly: false,
+    mode: 'xml',
+    theme: 'monokai'
+  };
 
-  render() {
-    return (
-      <textarea
-        id={this.props.id}
-        ref={(node) => { this.input = node; }}
-        onBlur={this.handleBlur.bind(this)}
-        className="code"
-        cols="30"
-        rows="20">
-      </textarea>
-    );
-  }
+  return (
+    <CodeMirror
+      options={options}
+      onChange={onChange} />
+  );
 }
 
 CodeContainer.propTypes = {
+  id: PropTypes.string,
   onChange: PropTypes.func
 };
 
