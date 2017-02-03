@@ -1,0 +1,49 @@
+{
+  "name": "embed-demo-generator",
+  "version": "1.0.0",
+  "description": "A tool to generate embedded typeform demos",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && webpack",
+    "clean": "rm -rf dist",
+    "start": "webpack-dev-server -d --hot --inline"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^4.2.0",
+    "sass-loader": "^4.1.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "brace": "^0.9.1",
+    "lodash": "^4.17.4",
+    "react": "^15.4.1",
+    "react-ace": "^4.1.1",
+    "react-dom": "^15.4.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "codepen",
+    "demo",
+    "embed"
+  ],
+  "author": "Sílvia Mur <silvia.mur@typeform.com>",
+  "license": "ISC"
+}
