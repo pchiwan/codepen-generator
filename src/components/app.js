@@ -58,12 +58,8 @@ class App extends Component {
       html
     };
 
-    const JSONstring = JSON.stringify(data)
-      .replace(/"/g, '&​quot;')
-      .replace(/'/g, '&apos;');
-
     this.setState({
-      data: JSONstring
+      data: JSON.stringify(data)
     });
   }
 
