@@ -20,11 +20,6 @@ body {
   margin: 20px auto;  
 }
 
-h1, h2 {
-  font-family: 'Nova Mono';
-  text-shadow: -6px 6px black;
-}
-
 input {
   font-family: 'Dosis';
   font-size: 18px;
@@ -39,6 +34,10 @@ header{
   font-size: 24px;
   color: white;
   text-align: center;
+  > h1 {
+    font-family: 'Nova Mono';
+    text-shadow: -6px 6px black;
+  }
 }
 
 .box {
@@ -60,15 +59,99 @@ header{
   }
 }
 
-.configurator {
+.pen-settings {
+  flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  flex: 1;
+  margin-bottom: 20px;
+}
+  
+.type-selector {
+  flex: 2;
+  margin-bottom: 20px;
 
-  .control {
-    #title {
-      width: 400px;
+  > div {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.embed-settings {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-text {
+  margin-right: 20px;
+  #title {
+    width: 400px;
+  }
+}
+
+.input-radio {
+  margin-right: 20px;
+  label {
+    display: inline-block;
+  }
+}
+
+.toggle-switch {
+  margin-right: 20px;
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+      
+      &:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      &.round {
+        border-radius: 34px;
+        &:before {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
     }
   }
 }

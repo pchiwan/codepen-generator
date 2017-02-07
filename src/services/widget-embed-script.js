@@ -2,7 +2,7 @@ import { template } from 'lodash';
 
 const script = template(`
 <div class="typeform-widget"
-  data-url="http://forms.typeform.com/to/<%= uid %>"
+  data-url="<%= typeformUrl %>"
   data-text="<%= title %>"
   style="width: <%= width %>; height: <%= height %>;">
 </div>

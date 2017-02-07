@@ -3,7 +3,7 @@ import CodeMirror from 'react-codemirror';
 
 import 'codemirror/mode/xml/xml';
 
-const CodeContainer = ({onChange}) => {
+const CodeContainer = ({ onChange, defaultValue = '' }) => {
   const options = {
     lineNumbers: true,
     readOnly: false,
@@ -14,12 +14,14 @@ const CodeContainer = ({onChange}) => {
   return (
     <CodeMirror
       options={options}
-      onChange={onChange} />
+      onChange={onChange}
+      defaultValue={defaultValue} />
   );
 }
 
 CodeContainer.propTypes = {
   id: PropTypes.string,
+  defaultValue: PropTypes.string,
   onChange: PropTypes.func
 };
 
