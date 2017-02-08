@@ -59,34 +59,39 @@ class EmbedSettings extends Component {
 
   render() {
     return (
-      <div className="embed-settings">
-         <InputText
-          id="width"
-          label="Width:"
-          onChange={this.setWidth.bind(this)}
-          value={this.settings.width} />
-        <InputText
-          id="height"
-          label="Height:"
-          onChange={this.setHeight.bind(this)}
-          value={this.settings.height} />
-        <InputText
-          id="opacity"
-          label="Opacity:"
-          onChange={this.setOpacity.bind(this)}
-          value={this.settings.opacity} />
-        <ToggleSwitch
-          id="hide-header"
-          label="Hide header:"
-          onChange={this.setHideHeader.bind(this)} />
-        <ToggleSwitch
-          id="hide-footer"
-          label="Hide footer:"
-          onChange={this.setHideFooter.bind(this)} />
-        <ToggleSwitch
-          id="hide-scrollbar"
-          label="Hide scrollbar:"
-          onChange={this.setHideScrollbar.bind(this)} />
+      <div className="embed-settings flex flex-col">
+        <div className="flex flex-row flex-wrap">
+          <InputText
+            id="width"
+            label="Width:"
+            onChange={this.setWidth.bind(this)}
+            value={this.settings.width} />
+          <InputText
+            id="height"
+            label="Height:"
+            onChange={this.setHeight.bind(this)}
+            value={this.settings.height} />
+          <InputText
+            id="opacity"
+            label="Opacity:"
+            onChange={this.setOpacity.bind(this)}
+            value={this.settings.opacity}
+            title="Set opacity to 0 for transparent background" />
+        </div>
+        <div className="flex flex-row flex-wrap">
+          <ToggleSwitch
+            id="hide-header"
+            label="Hide header:"
+            onChange={this.setHideHeader.bind(this)} />
+          <ToggleSwitch
+            id="hide-footer"
+            label="Hide footer:"
+            onChange={this.setHideFooter.bind(this)} />
+          <ToggleSwitch
+            id="hide-scrollbar"
+            label="Hide scrollbar:"
+            onChange={this.setHideScrollbar.bind(this)} />
+        </div>
       </div>
     );
   }

@@ -30,7 +30,7 @@ class PenSettings extends Component {
 
   render() {
     return (
-      <div className="pen-settings">
+      <div className="pen-settings flex flex-col">
         <InputText
           id="typeform-uid"
           label="Typeform UID:"

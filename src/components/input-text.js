@@ -7,15 +7,24 @@ class InputText extends Component {
   }
 
   render() {
+    const {
+      id,
+      label,
+      title,
+      value
+    } = this.props;
+
     return (
       <div className="input-text">
-        <label htmlFor={this.props.id}>{this.props.label}</label>
+        <label
+          htmlFor={id}
+          title={title}>{label}</label>
         <input
-          id={this.props.id}
+          id={id}
           ref={(node) => { this.input = node; }}
           type="text"
           onBlur={this.handleBlur.bind(this)}
-          defaultValue={this.props.value} />
+          defaultValue={value} />
       </div>
     );
   }
@@ -25,6 +34,7 @@ InputText.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   onChange: PropTypes.func,
+  title: PropTypes.string,
   value: PropTypes.string
 };
 

@@ -1,7 +1,7 @@
 export const EMBED_TYPES = {
   FULLPAGE: 'fullpage',
-  POPUP_BUTTON: 'link',
-  POPUP_LINK: 'button',
+  POPUP_BUTTON: 'button',
+  POPUP_LINK: 'link',
   WIDGET: 'widget'
 };
 
@@ -25,8 +25,7 @@ export const DEFAULT_EXAMPLE_HTML_PRE =
   <style type="text/css">
     body{
       padding-top: 20px;
-      margin: 0 auto;
-      width: 1200px;
+      margin: 0 40px;
       background: url(https://subtlepatterns.com/patterns/restaurant_icons.png);
       font-family: Arial, Helvetica, sans-serif;
       color: black;

@@ -3,12 +3,12 @@ import React, { PropTypes } from 'react';
 const InputRadio = ({ defaultChecked, label, name, value }) => {
   return (
     <span className="input-radio">
+      <label>{label}</label>
       <input
         type="radio"
         name={name}
         value={value}
         defaultChecked={defaultChecked} />
-      <label>{label}</label>
     </span>
   );
 }

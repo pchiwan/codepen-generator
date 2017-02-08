@@ -14,14 +14,14 @@ import {
 
 function generateUrl(options) {
   const {
-    uid,
+    uid = '',
     hideHeader,
     hideFooter,
     hideScrollbar,
     opacity
   } = options;
 
-  const url = `${TYPEFORM_URL}${uid}?`
+  const url = `${TYPEFORM_URL}${uid.trim()}?`
     .concat(hideHeader ? `${HIDE_HEADER_PARAM}=true&`: '')
     .concat(hideFooter ? `${HIDE_FOOTER_PARAM}=true&`: '')
     .concat(hideScrollbar ? `${HIDE_SCROLLBAR_PARAM}=true&`: '')
