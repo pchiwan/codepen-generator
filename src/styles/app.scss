@@ -30,12 +30,13 @@ input {
 }
 
 header{
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   text-align: center;
   > h1 {
     font-family: 'Nova Mono';
     text-shadow: -6px 6px black;
+    margin: 5px 0;
   }
 }
 
@@ -72,7 +73,7 @@ header{
 }
 
 .col-1{
-  width: 400px;
+  width: 25%;
 }
 
 .col-2 {
