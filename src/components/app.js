@@ -82,43 +82,40 @@ class App extends Component {
     return (
       <div className="app">
         <Header title="Embedded Typeform Example Generator" />
-        <div className="flex flex-row">
-          <div className="flex flex-col col-1">
-            <div className="box">
+        <div className="flex flex-col">
+          <div className="flex flex-row">
+            <div className="box col-1">
               <PenSettings
                 onChange={this.setPenSettings.bind(this)} />
               <TypeSelector 
                 onChange={this.setEmbedType.bind(this)} />
               <EmbedSettings
                 onChange={this.setEmbedSettings.bind(this)} />
-            </div>
-          
-            <div className="box">
-              <label htmlFor="pre-typeform">Code above embedded Typeform:</label>
-              <CodeContainer
-                id="pre-typeform"
-                onChange={this.setPreTypeform.bind(this)}
-                defaultValue={this.preTypeform} />
-              <label className="highlight">Typeform will be rendered in between</label>
-              <label htmlFor="post-typeform">Code below embedded Typeform:</label>
-              <CodeContainer
-                id="post-typeform"
-                onChange={this.setPostTypeform.bind(this)}
-                defaultValue={this.postTypeform} />
-            </div>
-            <div className="action">
-              <form action="http://codepen.io/pen/define" method="POST" target="_blank">
-                <input type="hidden" name="data" value={this.state.data} />
-                <button type="submit">Generate</button>
-              </form>
-            </div>
-          </div>
-          <div className="flex flex-col col-2">
-            <div className="box">
+            </div>                    
+            <div className="box col-2">
               <LivePreview>
                 {this.state.html}
               </LivePreview>
             </div>
+          </div>
+          <div className="box">
+            <label htmlFor="pre-typeform">Code above embedded Typeform:</label>
+            <CodeContainer
+              id="pre-typeform"
+              onChange={this.setPreTypeform.bind(this)}
+              defaultValue={this.preTypeform} />
+            <label className="highlight">Typeform will be rendered in between</label>
+            <label htmlFor="post-typeform">Code below embedded Typeform:</label>
+            <CodeContainer
+              id="post-typeform"
+              onChange={this.setPostTypeform.bind(this)}
+              defaultValue={this.postTypeform} />
+          </div>
+          <div className="action">
+            <form action="http://codepen.io/pen/define" method="POST" target="_blank">
+              <input type="hidden" name="data" value={this.state.data} />
+              <button type="submit">Generate</button>
+            </form>
           </div>
         </div>
       </div>

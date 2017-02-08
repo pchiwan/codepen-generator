@@ -18,14 +18,17 @@ class ToggleSwitch extends Component {
   }
 
   render() {
-    const { label } = this.props;
+    const { 
+      id,
+      label
+    } = this.props;
 
     return (
       <div className="toggle-switch">
-        <label htmlFor={this.props.id}>{this.props.label}</label> 
+        <label htmlFor={id}><strong>{label}</strong></label> 
         <span className="switch" onClick={this.handleClick.bind(this)}>
           <input
-            id={this.props.id}
+            id={id}
             type="checkbox"
             checked={this.state.checked} />
           <div className="slider round"></div>

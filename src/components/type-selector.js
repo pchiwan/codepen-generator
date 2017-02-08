@@ -11,7 +11,7 @@ class TypeSelector extends Component {
   render() {
     return (
       <div className="type-selector">
-        <label>Embed type:</label>
+        <label><strong>Embed type:</strong></label>
         <div className="flex flex-row"
           onChange={this.handleChange.bind(this)}>
           <InputRadio

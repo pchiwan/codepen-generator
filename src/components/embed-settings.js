@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import InputText from './input-text';
+import InputSlide from './input-slide';
 import ToggleSwitch from './toggle-switch';
 
 class EmbedSettings extends Component {
@@ -18,13 +19,13 @@ class EmbedSettings extends Component {
 
   setHeight(value) {
     this.setSettings({
-      height: value
+      height: `${value}px`
     });
   }
 
   setWidth(value) {
     this.setSettings({
-      width: value
+      width: `${value}%`
     });
   }
 
@@ -60,8 +61,8 @@ class EmbedSettings extends Component {
   render() {
     return (
       <div className="embed-settings flex flex-col">
-        <div className="flex flex-row flex-wrap">
-          <InputText
+        <div className="flex flex-col">
+          {/*<InputText
             id="width"
             label="Width:"
             onChange={this.setWidth.bind(this)}
@@ -76,9 +77,31 @@ class EmbedSettings extends Component {
             label="Opacity:"
             onChange={this.setOpacity.bind(this)}
             value={this.settings.opacity}
+            title="Set opacity to 0 for transparent background" />*/}
+          <InputSlide
+            id="width"
+            label="Width:"
+            min="1"
+            max="100"
+            unit="%"
+            onChange={this.setWidth.bind(this)}
+            value={parseInt(this.settings.width)} />
+          <InputSlide
+            id="height"
+            label="Height:"
+            min="200"
+            max="800"
+            unit="px"
+            onChange={this.setHeight.bind(this)}
+            value={parseInt(this.settings.height)} />
+          <InputSlide
+            id="opacity"
+            label="Opacity:"            
+            onChange={this.setOpacity.bind(this)}
+            value={this.settings.opacity}
             title="Set opacity to 0 for transparent background" />
         </div>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex flex-col">
           <ToggleSwitch
             id="hide-header"
             label="Hide header:"

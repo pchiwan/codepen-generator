@@ -18,7 +18,7 @@ class InputText extends Component {
       <div className="input-text">
         <label
           htmlFor={id}
-          title={title}>{label}</label>
+          title={title}><strong>{label}</strong></label>
         <input
           id={id}
           ref={(node) => { this.input = node; }}
